@@ -52,7 +52,6 @@ document.getElementById("getDoctorBtn").addEventListener("click", function() {
 
     if (doctorName) {
         doctorElement.innerHTML = "Doctor on duty for " + selectedArea + " on " + formattedDate + " is <strong>" + doctorName + "</strong>. <br> Phone number: " + doctorPhoneNumber;
-        document.getElementById("date").value = "";
     } else {
         doctorElement.innerText = "No schedule found for the selected date.";
     }
