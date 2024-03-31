@@ -8,21 +8,27 @@
 </head>
 <body>
 
-<h2>April 2024 Doctor Duty Schedule</h2>
+<div class="container">
+    <h2>April 2024 Doctor Duty Schedule</h2>
 
-<label for="date">Select Date:</label>
-<input type="date" id="date" name="date" max="2024-04-30">
+    <div class="input-container">
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" max="2024-04-30">
 
-<label for="area">Select Area:</label>
-<select id="area" name="area">
-  <option value="OPD/ER">OPD/ER</option>
-  <option value="Inpatient">Inpatient</option>
-</select>
+        <label for="area">Select Area:</label>
+        <select id="area" name="area">
+            <option value="OPD/ER">OPD/ER</option>
+            <option value="Inpatient">Inpatient</option>
+        </select>
+    </div>
 
-<button id="getDoctorBtn">Get Doctor</button>
-<button id="resetBtn">Reset</button>
+    <div class="button-container">
+        <button id="getDoctorBtn">Get Doctor</button>
+        <button id="resetBtn">Reset</button>
+    </div>
 
-<p id="doctor"></p>
+    <div id="doctor" class="doctor-info"></div>
+</div>
 
 <script src="script.js"></script>
 
