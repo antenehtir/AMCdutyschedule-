@@ -1,5 +1,5 @@
 document.getElementById("getDoctorBtn").addEventListener("click", function() {
-    var selectedDate = document.getElementById("date").value;
+    var selectedDate = new Date(document.getElementById("date").value);
     var selectedArea = document.getElementById("area").value;
 
     var phoneNumbers = {
@@ -45,9 +45,9 @@ document.getElementById("getDoctorBtn").addEventListener("click", function() {
         "April 30": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam"}
     };
 
-    var formattedDate = formatDate(selectedDate); // Format date to match schedule format
-    var doctorName = schedule[formattedDate][selectedArea];
-    var doctorPhoneNumber = phoneNumbers[doctorName];
+    var formattedDate = formatDate(selectedDate);
+    var doctorName = schedule[formattedDate] ? schedule[formattedDate][selectedArea] : null;
+    var doctorPhoneNumber = doctorName ? phoneNumbers[doctorName] : null;
     var doctorElement = document.getElementById("doctor");
 
     if (doctorName) {
@@ -62,8 +62,8 @@ document.getElementById("resetBtn").addEventListener("click", function() {
     document.getElementById("date").value = "";
 });
 
-function formatDate(dateString) {
-    var dateArray = dateString.split('-');
-    var formattedDate = "April " + parseInt(dateArray[2]);
-    return formattedDate;
+function formatDate(date) {
+    var month = date.getMonth() + 1; // Months are zero based
+    var day = date.getDate();
+    return "April " + (day < 10 ? '0' : '') + day;
 }
