@@ -3,36 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>April 2024 Doctor Duty Schedule</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Duty Schedule - September 2024</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<div class="container">
-    <h2>April 2024 Doctor Duty Schedule</h2>
-
-    <div class="input-container">
-        <label for="date">Select Date:</label>
-        <input type="date" id="date" name="date" max="2024-04-30">
-    </div>
-
-    <div class="input-container">
-        <label for="area">Select Area:</label>
-        <select id="area" name="area">
-            <option value="OPD/ER">OPD/ER</option>
-            <option value="Inpatient">Inpatient</option>
-        </select>
-    </div>
-
-    <div class="button-container">
+    <h1>Duty Schedule for September 2024</h1>
+    <div class="container">
+        <div class="input-group">
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" min="2024-09-02" max="2024-09-30">
+        </div>
+        <div class="input-group">
+            <label for="area">Select Area:</label>
+            <select id="area">
+                <option value="OPD/ER">Outpatient (OPD/ER)</option>
+                <option value="Inpatient">Inpatient (Ward/ICU)</option>
+            </select>
+        </div>
         <button id="getDoctorBtn">Get Doctor</button>
         <button id="resetBtn">Reset</button>
+        <div id="doctor" class="result"></div>
     </div>
-
-    <div id="doctor" class="doctor-info"></div>
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
