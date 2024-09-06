@@ -6,43 +6,40 @@ document.getElementById("getDoctorBtn").addEventListener("click", function() {
         "Dr. Dawit": "+251920192199",
         "Dr. Lewam": "+251934343144",
         "Dr. Helina": "+251913110147",
-        "Dr. Anteneh": "+251912412707",
         "Dr. Genet": "+251921931429",
-        "Dr. Rediet": "+251021146518",
         "Dr. Rewina": "+251913670699"
     };
 
     var schedule = {
-        "April 01": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "April 02": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
-        "April 03": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Anteneh"},
-        "April 04": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "April 05": {"OPD/ER": "Dr. Anteneh", "Inpatient": "Dr. Helina"},
-        "April 06": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam"},
-        "April 07": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "April 08": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina"},
-        "April 09": {"OPD/ER": "Dr. Anteneh", "Inpatient": "Dr. Lewam"},
-        "April 10": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "April 11": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Anteneh"},
-        "April 12": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
-        "April 13": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "April 14": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
-        "April 15": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Anteneh"},
-        "April 16": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "April 17": {"OPD/ER": "Dr. Anteneh", "Inpatient": "Dr. Helina"},
-        "April 18": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam"},
-        "April 19": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "April 20": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina"},
-        "April 21": {"OPD/ER": "Dr. Anteneh", "Inpatient": "Dr. Lewam"},
-        "April 22": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "April 23": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Anteneh"},
-        "April 24": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
-        "April 25": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "April 26": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
-        "April 27": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Anteneh"},
-        "April 28": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "April 29": {"OPD/ER": "Dr. Anteneh", "Inpatient": "Dr. Helina"},
-        "April 30": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam"}
+        "September 02": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
+        "September 03": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
+        "September 04": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
+        "September 05": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
+        "September 06": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Helina"},
+        "September 07": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
+        "September 08": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Helina"},
+        "September 09": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam"},
+        "September 10": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
+        "September 11": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina"},
+        "September 12": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
+        "September 13": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
+        "September 14": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam D Dr. Rewina N"},
+        "September 15": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
+        "September 16": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
+        "September 17": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
+        "September 18": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Dawit"},
+        "September 19": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
+        "September 20": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Helina"},
+        "September 21": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam"},
+        "September 22": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
+        "September 23": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina"},
+        "September 24": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
+        "September 25": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
+        "September 26": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Dawit"},
+        "September 27": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
+        "September 28": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
+        "September 29": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
+        "September 30": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Rewina"}
     };
 
     var formattedDate = formatDate(selectedDate);
@@ -65,5 +62,5 @@ document.getElementById("resetBtn").addEventListener("click", function() {
 function formatDate(date) {
     var month = date.getMonth() + 1; // Months are zero based
     var day = date.getDate();
-    return "April " + (day < 10 ? '0' : '') + day;
+    return "September " + (day < 10 ? '0' : '') + day;
 }
