@@ -1,9 +1,5 @@
-document.getElementById('getDoctor').addEventListener('click', function() {
-    const date = new Date(document.getElementById('date').value);
-    const area = document.getElementById('area').value;
-    const doctorInfo = document.getElementById('doctorInfo');
-
-    let schedule = {
+document.addEventListener("DOMContentLoaded", function() {
+    const schedule = {
         "September 02": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
         "September 03": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
         "September 04": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
@@ -34,17 +30,55 @@ document.getElementById('getDoctor').addEventListener('click', function() {
         "September 29": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
         "September 30": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Rewina"}
     };
-    const formattedDate = date.toISOString().split('T')[0];
 
-    if (schedule[formattedDate] && area) {
-        doctorInfo.textContent = `Doctor in charge for ${area} on ${formattedDate}: ${schedule[formattedDate][area]}`;
-    } else {
-        doctorInfo.textContent = "No schedule available or invalid input.";
+    const dateInput = document.getElementById("date");
+    const areaSelect = document.getElementById("area");
+    const getDoctorButton = document.getElementById("getDoctor");
+    const resetButton = document.getElementById("reset");
+    const doctorInfo = document.getElementById("doctorInfo");
+
+    // Function to get the doctor based on the selected date and area
+    function getDoctor() {
+        const selectedDate = dateInput.value;
+        const selectedArea = areaSelect.value;
+
+        if (!selectedDate) {
+            doctorInfo.textContent = "Please select a date.";
+            return;
+        }
+
+        if (!selectedArea) {
+            doctorInfo.textContent = "Please select an area.";
+            return;
+        }
+
+        const duty = schedule[selectedDate];
+        if (duty) {
+            if (selectedArea === "OPD/ER") {
+                doctorInfo.textContent = `Doctor on duty for OPD/ER: ${duty.opd}`;
+            } else if (selectedArea === "Inpatient") {
+                doctorInfo.textContent = `Doctor on duty for Inpatient: ${duty.inpatient}`;
+            }
+        } else {
+            doctorInfo.textContent = "No schedule available for this date.";
+        }
     }
-});
 
-document.getElementById('reset').addEventListener('click', function() {
-    document.getElementById('date').value = '';
-    document.getElementById('area').value = '';
-    document.getElementById('doctorInfo').textContent = '';
+    // Reset function
+    function resetForm() {
+        dateInput.value = "";
+        areaSelect.value = "";
+        doctorInfo.textContent = "";
+    }
+
+    // Event listeners for the buttons
+    getDoctorButton.addEventListener("click", function(event) {
+        event.preventDefault();  
+        getDoctor();
+    });
+
+    resetButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        resetForm();
+    });
 });
