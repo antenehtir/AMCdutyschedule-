@@ -1,34 +1,34 @@
 document.addEventListener("DOMContentLoaded", function() {
     const schedule = {
-        "September 02": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
-        "September 03": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
-        "September 04": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "September 05": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
-        "September 06": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Helina"},
-        "September 07": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "September 08": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Helina"},
-        "September 09": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam"},
-        "September 10": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "September 11": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina"},
-        "September 12": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
-        "September 13": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "September 14": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam D Dr. Rewina N"},
-        "September 15": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
-        "September 16": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "September 17": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
-        "September 18": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Dawit"},
-        "September 19": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "September 20": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Helina"},
-        "September 21": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam"},
-        "September 22": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "September 23": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina"},
-        "September 24": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
-        "September 25": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "September 26": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Dawit"},
-        "September 27": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
-        "September 28": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "September 29": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
-        "September 30": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Rewina"}
+        "September 02": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam" },
+        "September 03": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet" },
+        "September 04": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit" },
+        "September 05": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet" },
+        "September 06": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Helina" },
+        "September 07": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina" },
+        "September 08": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Helina" },
+        "September 09": { "OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam" },
+        "September 10": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit" },
+        "September 11": { "OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina" },
+        "September 12": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam" },
+        "September 13": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina" },
+        "September 14": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam D Dr. Rewina N" },
+        "September 15": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet" },
+        "September 16": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit" },
+        "September 17": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet" },
+        "September 18": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Dawit" },
+        "September 19": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina" },
+        "September 20": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Helina" },
+        "September 21": { "OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam" },
+        "September 22": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit" },
+        "September 23": { "OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina" },
+        "September 24": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam" },
+        "September 25": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina" },
+        "September 26": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Dawit" },
+        "September 27": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet" },
+        "September 28": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit" },
+        "September 29": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet" },
+        "September 30": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Rewina" }
     };
 
     const dateInput = document.getElementById("date");
@@ -37,9 +37,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const resetButton = document.getElementById("reset");
     const doctorInfo = document.getElementById("doctorInfo");
 
+    // Function to format the date as "September 02"
+    function formatDate(date) {
+        const options = { month: 'long', day: '2-digit' };
+        return new Date(date).toLocaleDateString('en-US', options);
+    }
+
     // Function to get the doctor based on the selected date and area
     function getDoctor() {
         const selectedDate = dateInput.value;
+        const formattedDate = formatDate(selectedDate);
         const selectedArea = areaSelect.value;
 
         if (!selectedDate) {
@@ -52,12 +59,12 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        const duty = schedule[selectedDate];
+        const duty = schedule[formattedDate];
         if (duty) {
             if (selectedArea === "OPD/ER") {
-                doctorInfo.textContent = `Doctor on duty for OPD/ER: ${duty.opd}`;
+                doctorInfo.textContent = `Doctor on duty for OPD/ER: ${duty["OPD/ER"]}`;
             } else if (selectedArea === "Inpatient") {
-                doctorInfo.textContent = `Doctor on duty for Inpatient: ${duty.inpatient}`;
+                doctorInfo.textContent = `Doctor on duty for Inpatient: ${duty.Inpatient}`;
             }
         } else {
             doctorInfo.textContent = "No schedule available for this date.";
