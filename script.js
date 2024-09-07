@@ -1,16 +1,9 @@
-document.getElementById("getDoctorBtn").addEventListener("click", function() {
-    var selectedDate = new Date(document.getElementById("date").value);
-    var selectedArea = document.getElementById("area").value;
+document.getElementById('getDoctor').addEventListener('click', function() {
+    const date = new Date(document.getElementById('date').value);
+    const area = document.getElementById('area').value;
+    const doctorInfo = document.getElementById('doctorInfo');
 
-    var phoneNumbers = {
-        "Dr. Dawit": "+251920192199",
-        "Dr. Lewam": "+251934343144",
-        "Dr. Helina": "+251913110147",
-        "Dr. Genet": "+251921931429",
-        "Dr. Rewina": "+251913670699"
-    };
-
-    var schedule = {
+    let schedule = {
         "September 02": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
         "September 03": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
         "September 04": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
@@ -41,26 +34,17 @@ document.getElementById("getDoctorBtn").addEventListener("click", function() {
         "September 29": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
         "September 30": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Rewina"}
     };
+    const formattedDate = date.toISOString().split('T')[0];
 
-    var formattedDate = formatDate(selectedDate);
-    var doctorName = schedule[formattedDate] ? schedule[formattedDate][selectedArea] : null;
-    var doctorPhoneNumber = doctorName ? phoneNumbers[doctorName] : null;
-    var doctorElement = document.getElementById("doctor");
-
-    if (doctorName) {
-        doctorElement.innerHTML = "Doctor on duty for " + selectedArea + " on " + formattedDate + " is <strong>" + doctorName + "</strong>. <br> Phone number: " + doctorPhoneNumber;
+    if (schedule[formattedDate] && area) {
+        doctorInfo.textContent = `Doctor in charge for ${area} on ${formattedDate}: ${schedule[formattedDate][area]}`;
     } else {
-        doctorElement.innerText = "No schedule found for the selected date.";
+        doctorInfo.textContent = "No schedule available or invalid input.";
     }
 });
 
-document.getElementById("resetBtn").addEventListener("click", function() {
-    document.getElementById("doctor").innerText = "";
-    document.getElementById("date").value = "";
+document.getElementById('reset').addEventListener('click', function() {
+    document.getElementById('date').value = '';
+    document.getElementById('area').value = '';
+    document.getElementById('doctorInfo').textContent = '';
 });
-
-function formatDate(date) {
-    var month = date.getMonth() + 1; // Months are zero based
-    var day = date.getDate();
-    return "September " + (day < 10 ? '0' : '') + day;
-}
