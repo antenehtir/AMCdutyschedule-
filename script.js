@@ -1,34 +1,34 @@
 document.addEventListener("DOMContentLoaded", function() {
     const schedule = {
-        "September 02": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
-        "September 03": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
-        "September 04": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "September 05": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
-        "September 06": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Helina"},
-        "September 07": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "September 08": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Helina"},
-        "September 09": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam"},
-        "September 10": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "September 11": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina"},
-        "September 12": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
-        "September 13": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "September 14": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam D Dr. Rewina N"},
-        "September 15": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
-        "September 16": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "September 17": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
-        "September 18": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Dawit"},
-        "September 19": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "September 20": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Helina"},
-        "September 21": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam"},
-        "September 22": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "September 23": {"OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina"},
-        "September 24": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam"},
-        "September 25": {"OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina"},
-        "September 26": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Dawit"},
-        "September 27": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet"},
-        "September 28": {"OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit"},
-        "September 29": {"OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet"},
-        "September 30": {"OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Rewina"}
+        "September 02": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251912345678"}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251911234567"}},
+        "September 03": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251911234567"}, "Inpatient": {"doctor": "Dr. Genet", "phone": "+251922345678"}},
+        "September 04": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251933345678"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251944345678"}},
+        "September 05": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251912345678"}, "Inpatient": {"doctor": "Dr. Genet", "phone": "+251922345678"}},
+        "September 06": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251911234567"}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251912345678"}},
+        "September 07": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251944345678"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251933345678"}},
+        "September 08": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251911234567"}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251912345678"}},
+        "September 09": {"OPD/ER": {"doctor": "Dr. Genet", "phone": "+251922345678"}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251911234567"}},
+        "September 10": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251933345678"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251944345678"}},
+        "September 11": {"OPD/ER": {"doctor": "Dr. Genet", "phone": "+251922345678"}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251912345678"}},
+        "September 12": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251912345678"}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251911234567"}},
+        "September 13": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251944345678"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251933345678"}},
+        "September 14": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251912345678"}, "Inpatient": {"doctor": "Dr. Lewam D Dr. Rewina N", "phone": "+251911234567"}},
+        "September 15": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251911234567"}, "Inpatient": {"doctor": "Dr. Genet", "phone": "+251922345678"}},
+        "September 16": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251933345678"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251944345678"}},
+        "September 17": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251912345678"}, "Inpatient": {"doctor": "Dr. Genet", "phone": "+251922345678"}},
+        "September 18": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251911234567"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251944345678"}},
+        "September 19": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251944345678"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251933345678"}},
+        "September 20": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251933345678"}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251912345678"}},
+        "September 21": {"OPD/ER": {"doctor": "Dr. Genet", "phone": "+251922345678"}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251911234567"}},
+        "September 22": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251933345678"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251944345678"}},
+        "September 23": {"OPD/ER": {"doctor": "Dr. Genet", "phone": "+251922345678"}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251912345678"}},
+        "September 24": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251912345678"}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251911234567"}},
+        "September 25": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251944345678"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251933345678"}},
+        "September 26": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251912345678"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251944345678"}},
+        "September 27": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251911234567"}, "Inpatient": {"doctor": "Dr. Genet", "phone": "+251922345678"}},
+        "September 28": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251933345678"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251944345678"}},
+        "September 29": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251912345678"}, "Inpatient": {"doctor": "Dr. Genet", "phone": "+251922345678"}},
+        "September 30": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251911234567"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251933345678"}}
     };
 
     const dateInput = document.getElementById("date");
@@ -63,30 +63,22 @@ document.addEventListener("DOMContentLoaded", function() {
         if (duty) {
             const doctor = duty[selectedArea];
             if (doctor) {
-                doctorInfo.textContent = `Doctor on duty for ${selectedArea}: ${doctor}`;
+                doctorInfo.textContent = `Doctor on duty for ${selectedArea}: ${doctor.doctor}, Phone: ${doctor.phone}`;
             } else {
-                doctorInfo.textContent = "No doctor available for the selected area.";
+                doctorInfo.textContent = "No doctor on duty for the selected area.";
             }
         } else {
-            doctorInfo.textContent = "No schedule available for this date.";
+            doctorInfo.textContent = "No schedule found for the selected date.";
         }
     }
 
-    // Reset function
-    function resetForm() {
+    // Event listener for "Get Doctor" button
+    getDoctorButton.addEventListener("click", getDoctor);
+
+    // Event listener for "Reset" button
+    resetButton.addEventListener("click", function() {
         dateInput.value = "";
-        areaSelect.value = "";
+        areaSelect.selectedIndex = 0;
         doctorInfo.textContent = "";
-    }
-
-    // Event listeners for the buttons
-    getDoctorButton.addEventListener("click", function(event) {
-        event.preventDefault();  
-        getDoctor();
-    });
-
-    resetButton.addEventListener("click", function(event) {
-        event.preventDefault();
-        resetForm();
     });
 });
