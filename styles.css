@@ -1,66 +1,87 @@
-/* Basic styling for the container */
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+/* Body styling */
+body {
+    background-image: url('https://lh3.googleusercontent.com/p/AF1QipNu7kV2Gs1op4hWZwmIY5wyktn0zPSNoz9bHRxH=s1360-w1360-h1020');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-color: #f4f4f4;
+}
+
+/* Main container styling */
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
 }
 
-h1 {
-    font-size: 24px;
-    color: lightorange;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
+/* Form elements styling */
 label {
-    font-size: 18px;
-    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
 }
 
-input, select {
+input[type="date"],
+select {
     width: 100%;
     padding: 10px;
-    font-size: 16px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
+    margin: 10px 0;
     border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
 }
 
+/* Button styling */
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 10px;
-    background-color: #007BFF;
+    width: 100%;
+    padding: 10px;
+    background-color: lightcoral;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: coral;
 }
 
-.info-box {
+/* Reset button styling */
+#reset {
+    background-color: lightgray;
+}
+
+#reset:hover {
+    background-color: gray;
+}
+
+/* Doctor info display */
+#doctorInfo {
     margin-top: 20px;
     font-size: 18px;
-    color: #333;
+    font-weight: bold;
 }
 
-/* Responsive adjustments */
+/* Add some responsiveness for smaller screens */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 20px;
+    .container {
+        padding: 15px;
+        max-width: 100%;
     }
 
     button {
-        font-size: 14px;
+        padding: 12px;
     }
 }
