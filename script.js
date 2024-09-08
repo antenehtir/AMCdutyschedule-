@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const getDoctorButton = document.getElementById("getDoctor");
     const resetButton = document.getElementById("reset");
     const doctorInfo = document.getElementById("doctorInfo");
+    const todayButton = document.getElementById("todayDoctor");
 
     // Helper function to format date as "September 02"
     function formatDate(date) {
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return new Date(date).toLocaleDateString('en-US', options);
     }
 
-    // Function to get the doctor based on the selected date and area
+    // Function to get the doctor for a selected date and area
     function getDoctor() {
         const selectedDate = dateInput.value;
         const selectedArea = areaSelect.value;
@@ -72,13 +73,33 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Event listener for "Get Doctor" button
-    getDoctorButton.addEventListener("click", getDoctor);
+    // Function to get the doctor on duty today for both OPD/ER and Inpatient
+    function getTodayDoctor() {
+        const today = new Date();
+        const formattedDate = formatDate(today);
+        const duty = schedule[formattedDate];
 
-    // Event listener for "Reset" button
-    resetButton.addEventListener("click", function() {
+        if (duty) {
+            const opdDoctor = duty["OPD/ER"];
+            const inpatientDoctor = duty["Inpatient"];
+            doctorInfo.innerHTML = `
+                <strong>Doctor on duty for OPD/ER:</strong> ${opdDoctor.doctor}, Phone: ${opdDoctor.phone}<br>
+                <strong>Doctor on duty for Inpatient:</strong> ${inpatientDoctor.doctor}, Phone: ${inpatientDoctor.phone}
+            `;
+        } else {
+            doctorInfo.textContent = "No schedule available for today.";
+        }
+    }
+
+    // Reset function
+    function resetForm() {
         dateInput.value = "";
-        areaSelect.selectedIndex = 0;
+        areaSelect.value = "";
         doctorInfo.textContent = "";
-    });
+    }
+
+    // Event listeners
+    getDoctorButton.addEventListener("click", getDoctor);
+    resetButton.addEventListener("click", resetForm);
+    todayButton.addEventListener("click", getTodayDoctor); // Event listener for the new "Who's on Duty Today?" button
 });
