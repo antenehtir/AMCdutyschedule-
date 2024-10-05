@@ -3,32 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duty Schedule</title>
+    <title>Duty Schedule - October 2024</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Duty Schedule for September 2024</h1>
+        <h1>Duty Schedule for October 2024</h1>
 
+        <!-- Date selection -->
         <div class="form-group">
             <label for="date">Select Date:</label>
-            <input type="date" id="date">
+            <select id="date">
+                <option value="" disabled selected>Select a Date</option>
+                <option value="October 01">October 01</option>
+                <option value="October 02">October 02</option>
+                <option value="October 03">October 03</option>
+                <option value="October 04">October 04</option>
+                <option value="October 05">October 05</option>
+                <option value="October 06">October 06</option>
+                <option value="October 07">October 07</option>
+                <option value="October 08">October 08</option>
+                <option value="October 09">October 09</option>
+                <option value="October 10">October 10</option>
+                <!-- Add all other dates till October 31 -->
+                <option value="October 31">October 31</option>
+            </select>
         </div>
 
+        <!-- Area selection -->
         <div class="form-group">
             <label for="area">Select Area:</label>
             <select id="area">
-                <option value="" selected disabled>Outpatient/Inpatient</option>
+                <option value="" disabled selected>Select an Area</option>
                 <option value="OPD/ER">Outpatient (OPD/ER)</option>
                 <option value="Inpatient">Inpatient (Ward/ICU)</option>
             </select>
         </div>
 
-        <button id="getDoctor">Get Doctor</button>
-        <button id="reset">Reset</button>
-        <button id="todayDoctor">Who's on Duty Today?</button>
+        <!-- Button to get duty doctor -->
+        <button id="getDoctor">Get Duty Doctor</button>
 
-        <div id="doctorInfo" class="info-box"></div>
+        <!-- Reset button -->
+        <button id="resetButton">Reset</button>
+
+        <!-- Result display -->
+        <div id="result" class="result-box"></div>
     </div>
 
     <script src="script.js"></script>
