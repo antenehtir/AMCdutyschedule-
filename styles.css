@@ -1,107 +1,87 @@
+/* Body styling */
 body {
+    background-image: url('https://lh3.googleusercontent.com/p/AF1QipNu7kV2Gs1op4hWZwmIY5wyktn0zPSNoz9bHRxH=s1360-w1360-h1020');
+    background-size: cover;
+    background-position: center;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
-}
-
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    color: #333;
 }
 
-.form-group {
-    margin-bottom: 15px;
+/* Main container styling */
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
 }
 
+/* Form elements styling */
 label {
+    font-size: 16px;
+    margin-bottom: 10px;
     display: block;
-    margin-bottom: 5px;
-    color: #333;
 }
 
+input[type="date"],
 select {
     width: 100%;
-    padding: 8px;
-    font-size: 16px;
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-bottom: 20px;
+    font-size: 16px;
 }
 
+/* Button styling */
 button {
-    padding: 10px 15px;
-    background-color: #007BFF;
-    color: #fff;
+    width: 100%;
+    padding: 10px;
+    background-color: lightcoral;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
-.result-box {
+button:hover {
+    background-color: coral;
+}
+
+/* Reset button styling */
+#reset {
+    background-color: lightgray;
+}
+
+#reset:hover {
+    background-color: gray;
+}
+
+/* Doctor info display */
+#doctorInfo {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #e9Here is the **final comprehensive code** for your **October 2024 duty schedule**:
+    font-size: 18px;
+    font-weight: bold;
+}
 
-### **HTML (index.html)**:
+/* Add some responsiveness for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        max-width: 100%;
+    }
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duty Schedule - October 2024</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Duty Schedule for October 2024</h1>
-
-        <!-- Date selection -->
-        <div class="form-group">
-            <label for="date">Select Date:</label>
-            <select id="date">
-                <option value="" disabled selected>Select a Date</option>
-                <option value="October 01">October 01</option>
-                <option value="October 02">October 02</option>
-                <option value="October 03">October 03</option>
-                <option value="October 04">October 04</option>
-                <option value="October 05">October 05</option>
-                <!-- Continue with all dates till October 31 -->
-                <option value="October 31">October 31</option>
-            </select>
-        </div>
-
-        <!-- Area selection -->
-        <div class="form-group">
-            <label for="area">Select Area:</label>
-            <select id="area">
-                <option value="" disabled selected>Select an Area</option>
-                <option value="OPD/ER">Outpatient (OPD/ER)</option>
-                <option value="Inpatient">Inpatient (Ward/ICU)</option>
-            </select>
-        </div>
-
-        <!-- Button to get duty doctor -->
-        <button id="getDoctor">Get Duty Doctor</button>
-
-        <!-- Reset button -->
-        <button id="resetButton">Reset</button>
-
-        <!-- Result display -->
-        <div id="result" class="result-box"></div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    button {
+        padding: 12px;
+    }
+}
