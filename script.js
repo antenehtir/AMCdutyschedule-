@@ -1,60 +1,107 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // October 2024 duty schedule
+document.addEventListener("DOMContentLoaded", function() {
     const schedule = {
-        "October 01": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina" },
-        "October 02": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Helina" },
-        "October 03": { "OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam" },
-        "October 04": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit" },
-        "October 05": { "OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina" },
-        "October 06": { "OPD/ER": "Dr. Dawit Day, Dr. Helina Night", "Inpatient": "Dr. Lewam" },
-        "October 07": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina" },
-        "October 08": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Rewina" },
-        "October 09": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet" },
-        "October 10": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit" },
-        "October 11": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet" },
-        "October 12": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Dawit Day, Dr. Helina Night" },
-        "October 13": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina" },
-        "October 14": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Helina" },
-        "October 15": { "OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam" },
-        "October 16": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit" },
-        "October 17": { "OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina" },
-        "October 18": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam" },
-        "October 19": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina" },
-        "October 20": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Lewam Day, Dr. Rewina Night" },
-        "October 21": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Genet" },
-        "October 22": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit" },
-        "October 23": { "OPD/ER": "Dr. Helina", "Inpatient": "Dr. Genet" },
-        "October 24": { "OPD/ER": "Dr. Lewam", "Inpatient": "Dr. Dawit" },
-        "October 25": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina" },
-        "October 26": { "OPD/ER": "Dr. Lewam Day, Dr. Rewina Night", "Inpatient": "Dr. Helina" },
-        "October 27": { "OPD/ER": "Dr. Genet", "Inpatient": "Dr. Lewam" },
-        "October 28": { "OPD/ER": "Dr. Rewina", "Inpatient": "Dr. Dawit" },
-        "October 29": { "OPD/ER": "Dr. Genet", "Inpatient": "Dr. Helina" },
-        "October 30": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Lewam" },
-        "October 31": { "OPD/ER": "Dr. Dawit", "Inpatient": "Dr. Rewina" }
+        "October 01": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251920192199"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251913670699"}},
+        "October 02": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251934343144"}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251913110147"}},
+        "October 03": {"OPD/ER": {"doctor": "Dr. Genet", "phone": "+251921931429"}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251934343144"}},
+        "October 04": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251913670699"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251920192199"}},
+        "October 05": {"OPD/ER": {"doctor": "Dr. Genet", "phone": "+251921931429"}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251913110147"}},
+        "October 06": {"OPD/ER": {"doctor": "Dr. Dawit Day, Dr. Helina Night", "phone": ""}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251934343144"}},
+        "October 07": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251920192199"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251913670699"}},
+        "October 08": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251913110147"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251913670699"}},
+        "October 09": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251934343144"}, "Inpatient": {"doctor": "Dr. Genet", "phone": "+251921931429"}},
+        "October 10": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251913670699"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251920192199"}},
+        "October 11": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251913110147"}, "Inpatient": {"doctor": "Dr. Genet", "phone": "+251921931429"}},
+        "October 12": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251934343144"}, "Inpatient": {"doctor": "Dr. Dawit Day, Dr. Helina Night", "phone": ""}},
+        "October 13": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251920192199"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251913670699"}},
+        "October 14": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251934343144"}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251913110147"}},
+        "October 15": {"OPD/ER": {"doctor": "Dr. Genet", "phone": "+251921931429"}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251934343144"}},
+        "October 16": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251913670699"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251920192199"}},
+        "October 17": {"OPD/ER": {"doctor": "Dr. Genet", "phone": "+251921931429"}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251913110147"}},
+        "October 18": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251913110147"}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251934343144"}},
+        "October 19": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251920192199"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251913670699"}},
+        "October 20": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251913110147"}, "Inpatient": {"doctor": "Dr. Lewam Day, Dr. Rewina Night", "phone": ""}},
+        "October 21": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251934343144"}, "Inpatient": {"doctor": "Dr. Genet", "phone": "+251921931429"}},
+        "October 22": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251913670699"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251920192199"}},
+        "October 23": {"OPD/ER": {"doctor": "Dr. Helina", "phone": "+251913110147"}, "Inpatient": {"doctor": "Dr. Genet", "phone": "+251921931429"}},
+        "October 24": {"OPD/ER": {"doctor": "Dr. Lewam", "phone": "+251934343144"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251920192199"}},
+        "October 25": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251920192199"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251913670699"}},
+        "October 26": {"OPD/ER": {"doctor": "Dr. Lewam Day, Dr. Rewina Night", "phone": ""}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251913110147"}},
+        "October 27": {"OPD/ER": {"doctor": "Dr. Genet", "phone": "+251921931429"}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251934343144"}},
+        "October 28": {"OPD/ER": {"doctor": "Dr. Rewina", "phone": "+251913670699"}, "Inpatient": {"doctor": "Dr. Dawit", "phone": "+251920192199"}},
+        "October 29": {"OPD/ER": {"doctor": "Dr. Genet", "phone": "+251921931429"}, "Inpatient": {"doctor": "Dr. Helina", "phone": "+251913110147"}},
+        "October 30": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251920192199"}, "Inpatient": {"doctor": "Dr. Lewam", "phone": "+251934343144"}},
+        "October 31": {"OPD/ER": {"doctor": "Dr. Dawit", "phone": "+251920192199"}, "Inpatient": {"doctor": "Dr. Rewina", "phone": "+251913670699"}}
     };
 
-    const dateSelect = document.getElementById('date');
-    const areaSelect = document.getElementById('area');
-    const result = document.getElementById('result');
-    const resetButton = document.getElementById('resetButton');
+    const dateInput = document.getElementById("date");
+    const areaSelect = document.getElementById("area");
+    const getDoctorButton = document.getElementById("getDoctor");
+    const resetButton = document.getElementById("reset");
+    const doctorInfo = document.getElementById("doctorInfo");
+    const todayButton = document.getElementById("todayDoctor");
 
-    // Display doctor based on selected date and area
-    document.getElementById('getDoctor').addEventListener('click', function() {
-        const selectedDate = dateSelect.value;
+    // Helper function to format date as "October 01"
+    function formatDate(date) {
+        const options = { month: 'long', day: '2-digit' };
+        return new Date(date).toLocaleDateString('en-US', options);
+    }
+
+    // Function to get the doctor for a selected date and area
+    function getDoctor() {
+        const selectedDate = dateInput.value;
         const selectedArea = areaSelect.value;
 
-        if (schedule[selectedDate] && schedule[selectedDate][selectedArea]) {
-            result.textContent = `Doctor on duty for ${selectedArea} on ${selectedDate}: ${schedule[selectedDate][selectedArea]}`;
-        } else {
-            result.textContent = 'No schedule available for the selected date and area.';
+        if (!selectedDate) {
+            doctorInfo.textContent = "Please select a date.";
+            return;
         }
-    });
 
-    // Reset selection
-    resetButton.addEventListener('click', function() {
-        dateSelect.value = '';
-        areaSelect.value = '';
-        result.textContent = '';
-    });
+        if (!selectedArea) {
+            doctorInfo.textContent = "Please select an area.";
+            return;
+        }
+
+        const formattedDate = formatDate(selectedDate);
+        const duty = schedule[formattedDate];
+        if (duty) {
+            const doctor = duty[selectedArea];
+            if (doctor) {
+                doctorInfo.textContent = `Doctor on duty for ${selectedArea}: ${doctor.doctor}, Phone: ${doctor.phone}`;
+            } else {
+                doctorInfo.textContent = "No doctor on duty for the selected area.";
+            }
+        } else {
+            doctorInfo.textContent = "No schedule found for the selected date.";
+        }
+    }
+
+    // Function to get the doctor on duty today for both OPD/ER and Inpatient
+    function getTodayDoctor() {
+        const today = new Date();
+        const formattedDate = formatDate(today);
+        const duty = schedule[formattedDate];
+
+        if (duty) {
+            const opdDoctor = duty["OPD/ER"];
+            const inpatientDoctor = duty["Inpatient"];
+            doctorInfo.innerHTML = `
+                <strong>Doctor on duty for OPD/ER:</strong> ${opdDoctor.doctor}, Phone: ${opdDoctor.phone}<br>
+                <strong>Doctor on duty for Inpatient:</strong> ${inpatientDoctor.doctor}, Phone: ${inpatientDoctor.phone}
+            `;
+        } else {
+            doctorInfo.textContent = "No schedule available for today.";
+        }
+    }
+
+    // Reset function
+    function resetForm() {
+        dateInput.value = "";
+        areaSelect.value = "";
+        doctorInfo.textContent = "";
+    }
+
+    // Event listeners
+    getDoctorButton.addEventListener("click", getDoctor);
+    resetButton.addEventListener("click", resetForm);
+    todayButton.addEventListener("click", getTodayDoctor); // Event listener for the new "Who's on Duty Today?" button
 });
