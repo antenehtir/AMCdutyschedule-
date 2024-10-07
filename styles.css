@@ -56,7 +56,7 @@ select:focus {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #e0e0e0; /* Subtle grey button */
+    background-color: #ffcc80; /* Light orange buttons */
     color: black;
     border: none;
     border-radius: 5px;
@@ -67,16 +67,16 @@ button {
 }
 
 button:hover {
-    background-color: #d3d3d3; /* Slightly darker grey on hover */
+    background-color: #ffb347; /* Slightly darker orange on hover */
 }
 
 /* Reset button styling */
 #reset {
-    background-color: #e0e0e0;
+    background-color: #ffcc80; /* Light orange reset button */
 }
 
 #reset:hover {
-    background-color: #d3d3d3;
+    background-color: #ffb347; /* Slightly darker orange on hover */
 }
 
 /* Doctor info display */
